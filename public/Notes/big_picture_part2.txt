@@ -1,0 +1,43 @@
+
+block/in-line 
+	block elements fill their container
+	<h1>WElcome</h1>
+
+div/span
+box model 
+	all content is in rectangles
+	how we add up the size of each rectangle
+	how we space rectangles full of content 
+	
+searching a different website from yours
+	making sure that the other site accepts requests from sites that aint theirs
+	APIs
+
+arrays == lists
+absolute vs relative positioning
+floats
+
+query strings to make links
+	whatever-the-domain-is.com/resource.html?key1=value1&key2=value2
+
+GET/POST 
+
+CSS = language of presentation, language of styling, "how" the content is shown
+	- your design decisions and layout and presentation
+	- your look is up to you
+	- "make it not look like bootstrap"
+	- the more you write CSS and decide to make each project have its own look or coherent look, the better
+
+loops are just specific lines of code that run 0 or more times
+
+functions = sequence of steps = one or more lines of code with a name
+
+DOM = document = HTML file and everything in it
+
+class vs. ID
+	Ids are SKU# or SS# for html elements
+	classes are "categories" of html elements
+
+joins = aggregating data
+
+OOP - way of thinking about our application such that all the proper nouns in the specificaitons or design or features of the app are represented by objects

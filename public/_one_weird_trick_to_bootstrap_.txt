@@ -1,0 +1,28 @@
+- "secret" to bootstrap
+	- add classes to html elements
+		- find a visual example of what you want to do on the bootstrap site
+
+two approaches
+	- build it up from scratch
+	- grap a template
+
+- adding your own CSS
+	<link href="/css/bootstrap.css">
+	<link href="/css/template.css">
+	<style>
+    	body > div.container.bs-docs-container > div > div.col-md-9 > div:nth-child(50) > form > input:nth-child(4) {
+    		background-color: blue;
+    	}
+	</style>
+
+- how to get the selector for a specific item (without slapping id on everything)
+	inspect the element you want
+	then right click the element's HTML inside the inspector
+	goto copy, then choose "selector"
+	
+- multiple class names
+<div class="col-md-6 bubba"></div>
+
+- hidden content under navbar
+
+- adding a container to contain everything	

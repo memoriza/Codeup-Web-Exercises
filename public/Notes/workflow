@@ -1,0 +1,25 @@
+workflow
+
+create and edit HTML, JS, CSS inside
+~/vagrant-lamp/sites/codeup.dev/public
+~/vagrant-lamp/sites/codeup.dev/public/HelloWorld.html
+
+navigating our browser is like pulling up the public/
+going in browser to http://codeup.dev/HelloWorld.html
+
+expectations: 
+- this is just the beginning
+- you will be challenged ( expect ups and downs)
+- ask a lot of questions
+- answer questions
+- make lots and lots of mistakes
+- learn love bugs
+- know yourself well enough
+	- "I just can't get it"
+	- need a snack and walk
+
+
+what you're going to learn here:
+1. How to think/act like software developer (lazy, impatient, hubris)
+2. How to ask effective questions (of your code, of what you know already, of your peers, of your other resouces)
+3. How to debug like scientist 

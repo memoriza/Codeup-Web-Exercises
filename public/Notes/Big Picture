@@ -1,0 +1,28 @@
+# Big Picture
+servers serve requests
+requests happen when human clicks a link/submits a form in browser
+
+# Mac OS X	|	vagrant VM
+file system
+Chrome
+Sublime Text
+~/vagrant-lamp/sites/codeup.dev
+~/vagrant-lamp/
+ansible
+Sequel Pro
+
+# varant VM
+- virtualized OS install
+- web server (Chrome)
+- MySQL database
+server logs
+- PHP - our server side programming language
+- /vagrant/sites/codeup.dev
+composer
+artisan
+
+
+navigate the browser to http://codeup.dev/HelloWorld.html
+sending a request to that address for that resource
+server (if setup to listen) listens for requests to that host
+server figures out what to do 

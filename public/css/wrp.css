@@ -1,0 +1,74 @@
+
+/*body color for all welome, resume, and portfolio*/
+body {
+	background-color: #BBBE64;
+	font-family: 'Handlee', cursive;
+}
+/*welcome gif*/
+
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+/*welcome collapsible button*/
+#jwelcome {
+	color: #DFF3E3;
+	background-image: url(/img/zoom.gif);
+	/*background-color: #E2F1AF;*/
+}
+
+#jwelcome:hover {
+	color: #F25C54;
+	background-color: #270722;
+}
+
+/*jwsleep image properties*/
+
+#jwsleep {
+	height: 400px;
+	width: 400px;
+	background-image: url(/img/story.gif);
+	padding-top: 25px;
+}
+
+
+/*navigation bar*/
+section.navigation {
+opacity: .75;
+margin-top: 100px;
+height: 150px;
+
+
+}
+/*navigation box around name*/
+.navigation {
+	background-color: #FE938C;
+}
+
+
+.navbar-static-top div {
+	background-color: #A8BA9A;
+	margin-bottom: 25px;
+}
+
+.navbar-static-top div:hover {
+	background-color: #E0EEC6;
+}
+
+.navbar-static-top div a{
+	color: #93032E;
+}
+.navbar-static-top div a:hover {
+	color: #7A4419;
+}
+
+.navbar-static-top {
+  text-align: center;
+}
+
+/*font color for all paragraphs*/
+div.row {
+	color: #143109;
+}
+

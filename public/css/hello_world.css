@@ -1,0 +1,62 @@
+h1 {
+	text-decoration: underline;
+	color: #ea1744;
+}
+
+h2 {
+	text-decoration: underline;
+	color: #1C1F33;
+}
+
+h3 {
+	text-decoration: underline;
+	color: #FF220C;
+}
+
+h4 {
+	text-decoration: line-through;
+	color: #191923;
+}
+
+body {
+	font-family: Pangolin, cursive;
+	background-color: #697a21;
+	background-image: url(http://www.sensiart.com/Images/Art/Sacred/XL/Buddha/Avalokiteshvara1000.jpg);
+	background-repeat: no-repeat;
+	background-repeat: repeat-y;
+
+}
+
+ul {
+	list-style-type: circle;
+}
+
+ol {
+	list-style-type: upper-roman;
+}
+
+table tr td { 
+	border: 10px;
+	padding: 10px 5px 10px 100px;
+	font-size: 20px;
+
+}
+
+a:link {
+	color: #DD1155;
+}
+
+a:visited {
+	color: #FBFF12;
+}
+
+a:hover {
+	font-size: 30px;
+}
+
+a:active {
+	color: #2A1E5C;
+}
+
+
+
