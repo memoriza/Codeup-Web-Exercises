@@ -1,0 +1,63 @@
+Where are we?
+=============
+
+- HTML + CSS: structure + styling of web pages
+- git: version control
+- JS: interactivity
+- PHP: server side langauge
+- Databases: persist data
+
+Git
+===
+
+1. background
+2. demonstration + explanation
+    - creating a directory
+    - initializing git repo
+    - add + commit files
+3. exercise
+    - create repo in codeup.dev
+4. demonstration
+    - git log + show
+    - create + sync repo on github
+
+Background
+----------
+
+- what is version control?
+    - resume v1, v2, v2_final
+    - formal process
+- why version control?
+    - rollback changes
+    - project history
+    - backup our work
+- Invented by Linus Torvalds (also created linux) to be a better vcs for linux
+  kernel code
+- industry standard
+- distributed
+
+Creating a Repository
+---------------------
+
+- command line
+    - tab completion
+- how to use git's help -- man page
+    - man
+    - pager -- (d)own (u)p (q)uit
+- git status after every step
+- create a new dir and make a repo
+    - mcd, init
+- add + commit -- difference between the two -- need to do both!
+    - who are you?
+    - subl as git editor
+- commit messages
+- git log
+    - git show
+
+D in dvcs
+---------
+
+- git push
+- github
+- local vs remote
+- readmes
