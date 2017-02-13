@@ -46,6 +46,9 @@ height: 150px;
 	background-color: #FE938C;
 }
 
+.navbar-static-top {
+  text-align: center;
+}
 
 .navbar-static-top div {
 	background-color: #A8BA9A;
@@ -61,10 +64,6 @@ height: 150px;
 }
 .navbar-static-top div a:hover {
 	color: #7A4419;
-}
-
-.navbar-static-top {
-  text-align: center;
 }
 
 /*font color for all paragraphs*/
