@@ -1,6 +1,10 @@
 "use strict"
 
-var studentsAverageGrades = ((70 + 80 + 95)/3);
+var grade1 = 70;
+var grade2 = 80;
+var grade3 = 95;
+var gradeNumbers = 3;
+var studentsAverageGrades = ((grade1 + grade2 + grade3)/ gradeNumbers);
 
 if (studentsAverageGrades >= 80) {  
 	console.log("You're Awesome");
@@ -13,26 +17,26 @@ var spentCameron = 180;
 var spentRyan = 250;
 var spentGeorge = 320;
 
-console.log("Regular Price for George " + spentGeorge);
+console.log("Regular Price for George $" + spentGeorge);
 if (spentGeorge >= 200) {
-	console.log("Discounted Price for George " + (spentGeorge - .35 * spentGeorge));
+	console.log("Discounted Price for George $" + (spentGeorge - .35 * spentGeorge));
 } else { 
-console.log("Regular Price for George " + spentGeorge);
+console.log("No Discount Price for George $" + spentGeorge);
 
 }
-console.log("Regular Price for Ryan " + spentRyan);
+console.log("Regular Price for Ryan $" + spentRyan);
 if (spentRyan >= 200) {
-	console.log("Discounted Price for Ryan " + (spentRyan - .35 * spentRyan));
+	console.log("Discounted Price for Ryan $" + (spentRyan - .35 * spentRyan));
 } else { 
-console.log("Regular Price for Ryan " + spentRyan);
+console.log("No Discount Price for Ryan $" + spentRyan);
 
 }
 
-console.log("Regular Price for Cameron " + spentCameron);
+console.log("Regular Price for Cameron $" + spentCameron);
 if (spentCameron >= 200) {
-	console.log("Discounted Price for Cameron " + (spentCameron - .35 * spentCameron));
+	console.log("Discounted Price for Cameron $" + (spentCameron - .35 * spentCameron));
 } else { 
-console.log("Regular Price for Cameron " + spentCameron);
+console.log("No Discount Price for Cameron $" + spentCameron);
 
 }
 
