@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>For Loop JS exercises</title>
+	</head>
+		<body>
+			<script>
+				// subtracting by 5
+				for (var i = 100; 5 <= i ; i -= 5) {
+					console.log(i);
+				}
+				// 1-10 times tables
+				var timesTable = Math.floor(Math.random()* 11) + 1;
+
+				for (i = 1; i <= 10; i++) {
+					console.log(timesTable + " * " + i  + " = " + (timesTable*i));
+				}
+				// odd and even 
+				for (i=1; i <=10; i++) {
+					var randomNumber = Math.floor(Math.random()* 201) + 20;
+
+					if (randomNumber % 2) {
+
+					console.log(randomNumber + " it is odd")} else { console.log(randomNumber + " it is even");
+
+				}
+				
+				}
+
+				// staggered strings 
+				for (i = 1; i <= 10; i++) {
+					var letters = "";
+
+						for (j = 1; j <= i; j++) {
+							letters += (i % 10);
+						}
+						console.log(letters);	
+				}
+
+
+			</script>
+		</body>
+</html>
