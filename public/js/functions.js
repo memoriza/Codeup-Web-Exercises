@@ -28,6 +28,16 @@ function sayHello(myNameIs) {
 // It generates a random number between 1 and 100 and stores it in random
 var random = Math.floor((Math.random()*100)+1);
 
+function isOdd(number) {
+	
+	//ternary operator syntax goes (condition) ? then : else
+	var message (number % 2 == 0) ? number " is even" : number " is odd";
+	console.log(message)
+}
+
+isOdd(random);
+
+
 // TODO:
 // Create a function called 'isOdd' that takes a number as a parameter.
 // The function should use the ternary operator to log a message.

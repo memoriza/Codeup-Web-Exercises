@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Functions Extras</title>
+	</head>
+	<body>
+		<script>
+
+			"use strict";
+
+			
+
+			function log(logged) {
+				var logged = "logged in information"
+				console.log(logged);
+			}
+
+			var result = log("BIG BRAINS ON BRAIN");
+
+			console.log(result);
+
+			function identity(logged2) {
+				var logged2 = "words words";
+				return logged2; 
+			}
+			var result = identity();
+			console.log(result);
+
+			function getRandomIntBetween(min, max) {
+				return (Math.floor(Math.random() * (max - min)) + min) 
+			}
+			console.log(getRandomIntBetween(20, 100)); 
+
+			function isNumeric(input) {
+
+				if (isNaN(input) === true) {
+					return false;
+				} else {
+					return true;
+				}
+				return result;
+			}
+			var result = isNumeric("343");
+			console.log(result);
+
+			function add(a, b) {
+				return ( a + b );
+			}
+			var result = add(2, 3)
+			console.log(result);
+
+			function subtract(a, b) {
+				return ( a - b );
+			}
+			var subr = subtract(5, 3);
+			console.log(subr);
+
+			function multiply(a, b) {
+				return ( a * b );
+			}
+			var mult = multiply(7, 8);
+			console.log(mult);
+
+			function divide(a, b) {
+				return ( a / b );
+			}
+			var divi = divide(89, 66);
+			console.log(divi);
+
+			function square(a) {
+				return multiply(a, a);
+			}
+			var sqr = square(7);
+			console.log(sqr);
+
+
+
+
+
+
+
+		</script>
+
+	</body>
+</html>

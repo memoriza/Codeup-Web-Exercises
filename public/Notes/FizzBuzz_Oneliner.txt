@@ -1,0 +1,1 @@
+for( i=0; ++i < 101; console.log( i % 5 ? x || i : x + 'Buzz')) x = i % 3 ? '' : 'Fizz'
