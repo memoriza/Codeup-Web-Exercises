@@ -11,19 +11,18 @@
 			
 
 			function log(logged) {
-				var logged = "logged in information"
 				console.log(logged);
 			}
 
-			var result = log("BIG BRAINS ON BRAIN");
+			var result = log("meows");
 
 			console.log(result);
 
 			function identity(logged2) {
-				var logged2 = "words words";
+			
 				return logged2; 
 			}
-			var result = identity();
+			var result = identity("farts");
 			console.log(result);
 
 			function getRandomIntBetween(min, max) {
@@ -33,15 +32,10 @@
 
 			function isNumeric(input) {
 
-				if (isNaN(input) === true) {
-					return false;
-				} else {
-					return true;
-				}
-				return result;
+				return !isNaN(input);
 			}
-			var result = isNumeric("343");
-			console.log(result);
+			
+			console.log(isNumeric("pineapple"));
 
 			function add(a, b) {
 				return ( a + b );
@@ -64,7 +58,7 @@
 			function divide(a, b) {
 				return ( a / b );
 			}
-			var divi = divide(89, 66);
+			var divi = divide(89, 89);
 			console.log(divi);
 
 			function square(a) {
@@ -73,7 +67,11 @@
 			var sqr = square(7);
 			console.log(sqr);
 
-
+			function sumOfSquares(a, b) {
+				return add((multiply(a, a)), multiply(b, b));
+			}
+			var ss = sumOfSquares (7, 9);
+			console.log(ss);
 
 
 

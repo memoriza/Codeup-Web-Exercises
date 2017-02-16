@@ -2,22 +2,23 @@
 
 console.log("Testing");
 
-var myNameIs = "Joshua Williams"; 
+(function () { 
+
+ 
 
 function sayHello(myNameIs) { 
+	var myNameIs = "Joshua Williams";
 	console.log("Hello from " + myNameIs);
 }
-sayHello(myNameIs);
+sayHello();
 
-var myName = "Ryan";
 
 function sayHello2() {
 	var localName = "Bob"
-	return localName;
+	return "Hello from " + localName;
 }
 
-myName = sayHello2()
-console.log(myName);
+console.log(sayHello2());
 
 var random = Math.floor((Math.random()*100)+1);
 
@@ -29,6 +30,8 @@ var message = (number % 2 == 0) ? number  + " is even" : number + " is odd";
 }
 
 isOdd(random);
+
+})();
 
 
 

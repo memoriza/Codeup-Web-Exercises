@@ -41,12 +41,12 @@
 
     console.log('Using splice to remove the planet after "Earth".');
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    planets.splice((planets.indexOf("Mars")), 1);
+    planets.splice((planets.indexOf("Earth") + 1), 1);
     logPlanets();
 
     console.log('Using splice to add back the planet after "Earth".');
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    planets.splice((planets.indexOf("Jupiter")), 0, "Mars");
+    planets.splice((planets.indexOf("Earth") + 1), 0, "Mars");
     logPlanets();
 
     console.log("Reversing the order of the planets array.");
