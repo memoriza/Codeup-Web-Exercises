@@ -1,0 +1,23 @@
+//Math Methods
+ Math.random()
+ random number
+
+ Math.round()
+ round appropriately
+
+ Math.floor()
+
+round down
+
+ Math.ceil()
+
+ round up 
+
+ Math.pow()
+ exponential
+
+ Math.sqrt()
+ square root
+
+ constants: Math.E, Math.PI
+ constants are in UPPERCASE
