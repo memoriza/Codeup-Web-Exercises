@@ -1,0 +1,89 @@
+var cellPhone = {
+
+	//properties of object
+
+	color: "black",
+	brand: "iPhone",
+	model: "5s",
+	storage: "16gb",
+	manufactured: 2010,
+	carrier: "AT&T",
+	locked: true,
+
+	//methods of an object
+
+	unlock: function () {
+		this.locked = false;
+
+	},
+	lock: function () {
+		this.locked = true;
+	}, 
+
+
+	//methods of an object
+
+
+
+	makeACall: function () {
+		return "Making a call";
+	},
+	text: function() {
+		return "Sending a text.";
+	}
+
+	cellphone.lock();
+	cellphone.unlock();
+}
+
+// Create an object witha constructor
+
+var pizza = new Object();
+
+//literal notation
+
+var pizza = {};
+
+//assign properties with dot notation
+
+pizza.sauce = "tomato";
+pizza.cheese = "mozzarella";
+pizza.crust = "thin";
+
+console.log(pizza);
+
+//create object and assign values together
+
+var pizza {
+	sauce: "tomato";
+	cheese: "mozzarella";
+	crust: "thin";
+}
+
+console.log(pizza);
+
+//Creating methods
+
+var pizza = {
+	"sauce": "tomato";
+
+	"cutPizza" = function () {
+	return "Slice, Slice!";
+	}
+
+}
+
+// call object method
+
+var slices = pizza.cutPizza();
+console.log(slices);
+
+//This keyword
+
+pizza.make = function() {
+	return "bake" + this.sauce + " ," this.cheese + "on " + this.crust + " crust.";
+}
+
+var yummyPizza = pizza.make
+console.log(yummyPizza);
+

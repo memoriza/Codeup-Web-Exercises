@@ -4,8 +4,6 @@
     // TODO: Create person object
  var person = {};
 
-console.log(person);
-
 person.firstName = "Joshua";
 person.lastName = "Williams";
 
@@ -17,7 +15,7 @@ console.log("My first name is " + person.firstName + " and my last name is " + p
     // TODO: Add a sayHello method to the person object that
     //       alerts a greeting using the firstName and lastName properties
 person.sayHello = function (){
-	alert("Hello my name is " + person.firstName + person.lastName);
+	alert("Hello my name is " + person.firstName + " " + person.lastName);
 }
     // Say hello from the person object.
     person.sayHello();
