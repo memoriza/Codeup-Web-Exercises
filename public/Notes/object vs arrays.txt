@@ -1,0 +1,21 @@
+object vs arrays
+
+arrays are lists. the array has numeric indexes.
+we can .forEach() on an array
+we can shift, run .length to get the number of elements
+we can shift, unshift, push, pop arrays
+we can call ANY array method on an array.
+Any value can be stored as an element in an array.
+arrays just store data
+
+Objects are composed of key => value pairs.
+the key is the index is the property's name
+Objects bundle together behavior (functions) and data
+Objects can have behavior (functions)
+Objects can have just data ( state, simple variables, facts)
+the behavior on an object (its methods) operates on "this" object itself
+
+
+
+
+
