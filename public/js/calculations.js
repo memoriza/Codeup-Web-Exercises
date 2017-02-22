@@ -6,9 +6,11 @@
 var leftdisplay = document.getElementById("leftoperand");
 var middledisplay = document.getElementById("operator");
 var rightdisplay = document.getElementById("rightoperand");
+
 leftdisplay.value = "";
 middledisplay.value = "";
 rightdisplay.value = "";
+
 
 // numbers and fucntions
 
@@ -85,7 +87,7 @@ document.getElementById("nine").addEventListener("click", function() {
 		}
 });
 
-// operator variables
+// operator variables 
 
 var plusbutton = document.getElementById("plus");
 var minusbutton = document.getElementById("minus");
@@ -94,6 +96,8 @@ var timesbutton = document.getElementById("times");
 var equalsbutton = document.getElementById("equals");
 var clearbutton = document.getElementById("clear");
 var decimalbutton = document.getElementById("decimal");
+var posnegbutton = document.getElementById("posneg");
+
 
 // operator functions
 
@@ -114,7 +118,6 @@ timesbutton.addEventListener("click", function () {
 	middledisplay.value = "*";
 	
 } );
-
 
 var decimals = function () {
 	if (middledisplay.value == "") {
@@ -145,7 +148,11 @@ equalsbutton.addEventListener("click", function () {
 		var result = parseFloat(leftdisplay.value) * parseFloat(rightdisplay.value);
 	} else if (middledisplay.value == "/") {
 		var result = parseFloat(leftdisplay.value) / parseFloat(rightdisplay.value);
-	} 
+	} else if (result == NaN || result == undefined) {
+	leftdisplay.value = "";
+	middledisplay.value = "";
+	rightdisplay.value = "";
+	}
 
 
 
@@ -156,14 +163,32 @@ equalsbutton.addEventListener("click", function () {
 	console.log(result);
 } );
 
-
-
-clearbutton.addEventListener("click", function()
-{
+clearbutton.addEventListener("click", function() {
 	leftdisplay.value = "";
 	middledisplay.value = "";
 	rightdisplay.value = "";
 } );
+
+var posNegative =  function() {
+    if (middledisplay.value == "") {
+        leftdisplay.value = -leftdisplay.value;
+    } else {
+    	rightdisplay.value = -rightdisplay.value;
+    }
+};
+
+posnegbutton.addEventListener("click", posNegative);
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
