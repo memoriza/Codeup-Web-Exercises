@@ -1,0 +1,41 @@
+body {
+	text-align: center;
+	background-color: #F3C98B;
+}
+
+body > div.container {
+	text-align: center;
+	color: #F56960;
+	background-position: 135px;
+	height:300px;
+	width: 270px;
+	margin-top: 100px;
+	padding-top: 60px;
+	padding-left: 60px;
+	border-radius: 100px;
+}
+
+div.calimage {
+	
+	
+}
+
+div button.btn {
+	padding-right: 10px;
+	margin: 4.25px;
+	color: #F56960;
+	width: 20px;
+	height: 30px;
+	
+}
+
+section{
+	text-align: center;
+}
+
+div > button {
+	color: #F56960;	
+}
+
+
+

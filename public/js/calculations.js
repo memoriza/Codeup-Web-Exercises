@@ -1,6 +1,7 @@
 "use strict";
 
 
+// display variables
 
 var leftdisplay = document.getElementById("leftoperand");
 var middledisplay = document.getElementById("operator");
@@ -8,6 +9,8 @@ var rightdisplay = document.getElementById("rightoperand");
 leftdisplay.value = "";
 middledisplay.value = "";
 rightdisplay.value = "";
+
+// numbers and fucntions
 
 document.getElementById("zero").addEventListener("click", function() {
 	 	if (middledisplay.value == "") {
@@ -82,12 +85,17 @@ document.getElementById("nine").addEventListener("click", function() {
 		}
 });
 
+// operator variables
+
 var plusbutton = document.getElementById("plus");
 var minusbutton = document.getElementById("minus");
 var dividebutton = document.getElementById("divide");
 var timesbutton = document.getElementById("times");
 var equalsbutton = document.getElementById("equals");
 var clearbutton = document.getElementById("clear");
+var decimalbutton = document.getElementById("decimal");
+
+// operator functions
 
 plusbutton.addEventListener("click", function () {
 	middledisplay.value = "+";
@@ -106,6 +114,24 @@ timesbutton.addEventListener("click", function () {
 	middledisplay.value = "*";
 	
 } );
+
+
+var decimals = function () {
+	if (middledisplay.value == "") {
+		var display = leftdisplay;
+	} else {
+		var display = rightdisplay; 
+	}
+	console.log(typeof display.value);
+
+	if (display.value.indexOf(".") > -1) { 
+			display.value = display.value.split(".").join("");
+	} 
+			display.value += ".";
+	}
+	
+decimalbutton.addEventListener("click", decimals);
+
 equalsbutton.addEventListener("click", function () { 
 
 
@@ -119,9 +145,11 @@ equalsbutton.addEventListener("click", function () {
 		var result = parseFloat(leftdisplay.value) * parseFloat(rightdisplay.value);
 	} else if (middledisplay.value == "/") {
 		var result = parseFloat(leftdisplay.value) / parseFloat(rightdisplay.value);
-	}
+	} 
 
-	leftdisplay.value = result;
+
+
+	leftdisplay.value = result.toFixed(2);
 	middledisplay.value = "";
 	rightdisplay.value = "";
 	
