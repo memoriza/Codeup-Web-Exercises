@@ -23,5 +23,4 @@ $("element").html("Hello World"); vs.
 //Changing CSS styling
 $("element").css("color","blue"); vs.
 
-vanilla JS way
-var jsHeader
+jQuery Selectors

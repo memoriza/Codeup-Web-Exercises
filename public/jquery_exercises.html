@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h1 id="hello" class="codeup">Hello World</h1>
-
+		<h3 id="btntitle">Click Me</h3>
 		<div id="codeup">THIS IS CONTENT</div>
 
 		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur accusantium labore pariatur, odio repellat dolorem aut aperiam accusamus, provident eos suscipit. Placeat illum debitis numquam assumenda, beatae tenetur, dolorum sed. </p>
@@ -24,10 +24,40 @@
 
 			"use strict";
 
-			$("h1 , p, li").css("background-color","yellow");
+			// anonymous function integrated
 
+			$("#btntitle").click(function(){
+				console.log("Title was clicked");
+			});
 
-		});</script>
+			$(".codeup").hover(
+
+				function() {
+					$(this).css("color","red");
+				},
+
+				function() {
+					$(this).css("color","black");
+				}
+				);
+			});
+			// creating a variable that holds an anonymous function and calling that function
+
+			var fn = function(){
+				alert("quit clicking!!");
+			}
+
+			$("#hello").click(function(){
+				$(this).css("background-color","yellow");
+			});
+
+			$("p").dblclick(function(){
+				$(this).css("font-size","18px");
+			});
+
+			$("#btntitle").dblclick(fn);
+
+		</script>
 
 	</body>
 </html>
