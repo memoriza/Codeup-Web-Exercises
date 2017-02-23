@@ -1,0 +1,14 @@
+API = application program interface
+	- interface for your program to talk to other programs
+	- give us an interface that we can use 
+	- lightswitch is an interface (positive, negative, ground)
+	
+BOM - setInterval, setTimeout, alert(), console.log, prompt, confirm() 
+
+DOM is our browser's API for the HTML document
+	- .getElementByID, getElementsByClassName, getElementsByTagName
+	-.addEventListener
+
+we will build our own APIs
+
+Don't forget to add height and width in the CSS for the .container that holds the google map API so that it will appear 

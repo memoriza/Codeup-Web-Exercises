@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+    
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhFyefKGdbGZHKRekLLmdhQv3WGFR8Q8A"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 17,
+            
+            tilt: 0,
+            // This sets the center of the map at our location
+            center: {
+                lat:  29.4173759,
+                lng: -98.4911502
+            },
+
+             mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        // Geocoder
+
+        // Set our address to geocode
+        var address = "701 S St Mary's St, San Antonio, TX 78204";
+
+        // Init geocoder object
+        var geocoder = new google.maps.Geocoder();
+
+        // Geocode our address
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+        // Check for a successful result
+        if (status == google.maps.GeocoderStatus.OK) {
+
+        // Recenter the map over the address
+        map.setCenter(results[0].geometry.location);
+
+        } else {
+
+        // Show an error message with the status if our request fails
+        alert("Geocoding was not successful - STATUS: " + status);
+        }
+        });
+
+        // Add the marker to our existing map
+
+
+        var stationcafe = {  
+                lat:  29.417375,
+                lng: -98.491150
+        }
+        var marker = new google.maps.Marker({
+        position: stationcafe,
+        map: map
+        
+        });
+
+        // Create a new infoWindow object with content
+        var infowindow = new google.maps.InfoWindow({
+            content: "Station Cafe"
+        })
+        // Open the window using our map and marker
+       
+
+        marker.addListener("click", function() {
+            infowindow.open(map, marker);
+        });
+
+        })();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+    
+    <label for="address">Address</label>
+    <input id="address" type="text">
+    <button id="getAddress">Map It!</button>
+
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhFyefKGdbGZHKRekLLmdhQv3WGFR8Q8A"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 7,
+            
+            tilt: 0,
+            // This sets the center of the map at our location
+            center: {
+                lat:  29.426791,
+                lng: 99.482
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var codeup = { lat: 29.426791, lng: 99.482 };
+
+        // Add the marker to our existing map
+        var marker = new google.maps.Marker({
+        position: codeup,
+        map: map
+        });
+        // Create a new infoWindow object with content
+        var infowindow = new google.maps.InfoWindow({
+        content: "Where are we?"
+        });
+
+// Open the window using our map and marker
+infowindow.open(map, marker);
+    })();
+    </script>
+</body>
+</html>
