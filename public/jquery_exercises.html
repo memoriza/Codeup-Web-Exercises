@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1 id="hello">Hello World</h1>
+
+		<ul id="smelly">
+			<li class="list">farts</li>
+			<li class="list">poops</li>
+			<li class="list">burps</li>
+			<li class="list">coughs</li>
+		</ul>
+
+		<script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+		<script> $(document).ready(function() {
+			var helloworld = $("#hello");
+
+			alert(helloworld.html());
+
+			var smells = $("#smelly").html();
+
+			alert(smells);
+		});</script>
+
+	</body>
+</html>

@@ -1,0 +1,27 @@
+jQuery - most popular JS library
+
+Offers simpler syntax to...
+	1 navigate a document
+	2 select DOM elements
+	3 handle events
+	4 create animations
+	5 create Ajax applications
+	6 add plugins
+
+jQuery download
+	https://code.jquery.com/
+	Version 2.2.4. min
+
+jQuery object
+$ and $()
+
+$(document).ready();
+
+//Changing text/html
+$("element").html("Hello World"); vs. 
+
+//Changing CSS styling
+$("element").css("color","blue"); vs.
+
+vanilla JS way
+var jsHeader
