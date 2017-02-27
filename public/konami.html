@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Konami CODE</title>
+	</head>
+	<body>
+	<div>
+		<form>
+        	<label for="password">ENTER Konami code and press ENTER</label>
+        	<input id="inputkc" name="password" type="password" placeholder="enter Konami code and press enter">
+    	</form>
+
+		<script src="http://code.jquery.com/jquery-2.2.4.min.js" 
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+
+		<script> $(document).ready(function() {
+
+			$("#konamicode").css("width","300px");
+
+			$("body").css("background-color","black");
+
+			var konKeys = {
+  				37: "left",
+  				38: "up",
+  				39: "right",
+  				40: "down",
+  				65: "a",
+  				66: "b",
+  				13: "enter"
+				};
+
+			var konamiCode = ["up", "up", "down", "down", "left", "right", "left", "right", "b", "a", "enter"];
+
+			var konamiCodePosition = 0;
+			
+
+			$("#inputkc").keydown(function(key) {
+
+					console.log(key.keyCode);
+
+					var key = konKeys[key.keyCode];
+
+					var requiredkey = konamiCode[konamiCodePosition];
+
+
+
+					if (key == requiredkey) {
+
+						alert("You have added 30 lives!"); 
+
+						$("body").css("background-image", "img/metal_gear_solid.jpg");
+						} else {
+							konamiCodePosition = 0;
+						}
+					});
+				});
+
+		</script>
+
+
+	</body>
+</html>
