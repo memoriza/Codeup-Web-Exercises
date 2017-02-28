@@ -28,13 +28,10 @@
 "use strict";
     $(document).ready(function () {
     
-   
-  
-
     // TODO: Create an ajax GET request for /data/inventory.json
 
     function gettingItDone() {
-        
+
         var request = $.ajax("/data/inventory.json");
 
         request.done(function(product) {
