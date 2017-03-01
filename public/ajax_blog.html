@@ -3,19 +3,24 @@
 	<head>
 		<title>AJAX BLOG</title>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		 <link rel="stylesheet" href="../css/"
 	</head>
 
 	<body>
 
-		<div id="posts"></div>
+		<main class="container img-responsive">
+ 
+		<div class="text-center" id="posts"></div>
+
+		<br>
+
+		<button class="btn pull-left" id="refreshButton">Refresh</button>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 		<script>
-		"use strict";
-
+    	
     	$(document).ready(function () {
-
 
     		function dailyBlog () {
 
@@ -29,34 +34,55 @@
 
     				for(var i = 0; i < data.length; i++) {
 
+    					blogs += "<h3 id='titles' class='titles text-center'>" + " Title: " + data[i].title + "</h3>";
+
+    					blogs += "<h4>" + " Date: " + data[i].date + "</h4>";
+
     					
+    					// $("#titles").click(function() { 
+    						blogs += "<p class='article text-center'>" + data[i].content + "</p>";
+    					// });
 
-    					blogs += "<h3>" + " Title " + data[i].title + "</h3>";
 
-    					blogs += "<p>" + " Content " + data[i].content + "</p><ul class='categories'>";
+    					blogs += "<span class='text-right'>" + "Categories: " + "</span>"; 
 
 					 	for(var j = 0; j < data[i].categories.length; j++) {
-                			blogs += "<li>" + data[i].categories[j] + "</li>";  
+                			blogs += "<button class=' text-right btn-sm btn-success'>"  + data[i].categories[j] + "</button>";  
             			};
+
             			
-            			blogs += "</ul>";
+            			
     				};
 
-    				console.log(blogs);
+
+
 
     			$("#posts").append(blogs);
+
+    			$("p").css("margin","30px");
+    			$("p").css("color", "#EFEFEF");
+    			$("p").css("background-color", "#B8B42D");
+    			$("body").css("background-color","#697A21");
+    			$(".btn").css("margin-right","10px");
+    			
 
     			});
     		
     		};
 
     	dailyBlog();
+
+    	$("#refreshButton").click(function() {
+        	$("#posts").html("");
+        	dailyBlog();
+    	});
+
     	});
 
 		
     	</script>
 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+		</main>
 	</body>
 </html>

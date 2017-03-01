@@ -6,30 +6,37 @@
 </head>
 <body>
 
+<main class="container">
+
 <h1>My Tool Store</h1>
 
-<button id="jsonRefresh">refresh</button>
+<button class="btn" id="jsonRefresh">refresh</button>
 
-<table id="products">
+<br>
+
+<table class="container" id="products">
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
+            <th class='title'>Title</th>
+            <th class='quantity'>Quantity</th>
+            <th class='price'>Price</th>
+            <th class='categories'>Categories</th>
         </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
 
+<!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
+
 "use strict";
+
     $(document).ready(function () {
     
     // TODO: Create an ajax GET request for /data/inventory.json
-
+    // function putting in jQuery content
     function gettingItDone() {
 
         var request = $.ajax("/data/inventory.json");
@@ -41,22 +48,41 @@
 
             for(var i = 0; i < product.length; i++) {
 
-                tools += "<tr class='title'><td>" + product[i].title + "</td>"; 
-                tools += "<td class='quantity'>" + product[i].quantity +"</td>";
-                tools += "<td class='price'>" + "$" + product[i].price +"</td>";
-                tools += "<td class='categories'>" + product[i].categories + "</td></tr>";  
+                tools += "<tr ><td>" + product[i].title + "</td>"; 
+                tools += "<td >" + product[i].quantity +"</td>";
+                tools += "<td >" + "$" + product[i].price +"</td>";
+                tools += "<td >" + product[i].categories + "</td></tr>";  
 
             };
 
             $("#insertProducts").html(tools);
 
+            console.log("success");
+
+            // fail option if code isn't successful
+
         }).fail(function(product, status) {
+
+            console.log("error");
             alert("not working");
+
         });
+
+            // css styling 
+            $("*").css("font-family","helvetica");
+            $("h1").css("background-color","#D6E681");
+            $(".title").css("width","115px");
+            $(".quantity").css("width","95px");
+            $(".price").css("width","90px");
+            $(".categories").css("width","115px");
+            $("tbody").css("color","black");
+            $("th").css("color", "#9B8816");
+            $("body").css("background-image","url('../img/codeuparrow.png')");
+            $("#products").css("background-color","#BABF95");
     };
-
+    // invoking function 
     gettingItDone();
-
+    // Refresh button
     $("#jsonRefresh").click(function() {
         $("#insertProducts").html("");
         gettingItDone();
@@ -65,11 +91,11 @@
 });
 
     
-
 </script>
 
+<!-- bootstrap -->
 <script 
     src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+</main>
 </body>
 </html>
