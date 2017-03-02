@@ -3,45 +3,67 @@
 	<head>
 
 		<title>WEATHERED</title>
-
+		<!-- bootstrap css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+		<!-- my css style -->
 		<link rel="stylesheet" href="../css/weather_map.css">
 
 	</head>
 
 	<body>
-		<!-- jQuery -->
+
+	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 		<main class="container">
 
+			<p id="weatherlocation"></p>
+
 			<div class="row" id="temps"></div>
+
+			<form id="userlatlong" action="weather_map.html">
+  				Latitude:<br>
+  				<input id="latin" type="text" name="lati" placeholder="latitude"><br>
+  				Longitude:<br>
+  				<input id="login" type="text" name="long" placeholder="longitude"><br><br>
+  				<input type="submit" value="Submit">
+			</form>
+
+
+			<div id="current"><em>Drag Marker</em></div>
 
 		 	<div id="maphouse"></div>
 		 	
 		
 		</main>
 
+		<!-- google maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABYwmRqAA9R-JBpMwWEYm7W18AbUs1LUA"></script>
+
 		<script>
 		
 		$(document).ready(function () {
 		
 
-		// make a function for making an Ajax request to the OpenWeatherMap API to return a weather object
+		
 		var APPID = "7f8e3aa0aad113510e0c1eaafd1c17b8";
 		var url = "http://api.openweathermap.org/data/2.5/forecast/daily";
+		var marker;
+		var myLatlng;
 
+		// make a function for making an Ajax request to the OpenWeatherMap API to return a weather object
 
-		function getWeather() {
+		function getWeather(Latitude, Longitude) {
 
 		 $.get(url, {
-					APPID: APPID,
-					q: "San Antonio",
-					// lat:
-					// lon:
-					cnt: 3,
-					units: "imperial",
+
+				APPID: APPID,
+					// q: "San Antonio",
+				lat: Latitude,
+				lon: Longitude,
+				cnt: 3,
+				units: "imperial",
+
 				}).fail(function(data, status) {
 
 					alert("Failed to load:" + status);
@@ -50,16 +72,16 @@
 
 					console.log(data);
 
-					var weathers = ""
+					var weathers = "";
+
+					$("#weatherlocation").html("<h2><em>" + "Weather for " + data.city.name + "</em></h2>");
 
 					for(var i = 0; i < data.list.length; i++) {
 
 				
 						weathers += "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 wviews '>";
 
-						weathers += "<h3>" + data.city.name + "</h3>";
-
-						weathers += "<h4>" + "Day " + (parseInt([i]) + 1) + "</h4>";
+						weathers += "<h3>" + "Day " + (parseInt([i]) + 1) + "</h3>";
 					
 						weathers += "<p>" + data.list[i].temp.max + "°" + " / " 
 					 	+ data.list[i].temp.min + "°" + "</p>";
@@ -76,11 +98,13 @@
 
 					 	
 					 
-					 	
-					};
-					
+					 	};
+
+					// inserting weather information to html
+
 					$("#temps").html(weathers);
 
+					// css for weather API
 					$(".wviews").css("border-width","1px");
 					$(".wviews").css("background-color","#D6EFFF");
 					$(".wviews").css("border-style","dashed");
@@ -90,40 +114,48 @@
 					});
 		};
 
-		getWeather();
+		var Latitude = 29.417375;
+		var Longitude = -98.491150;
 
+		getWeather(Latitude, Longitude);
+
+		// input and submit lat/long
+
+		$( "#userlatlong" ).submit(function( event ) {
+
+			event.preventDefault();
+
+			var lat = parseFloat($("#latin").val());
+
+			var log = parseFloat($("#login").val());
+
+			getWeather(lat, log);
+			
+  			console.log( "Handler for .submit() called." );
+
+  			initMap(lat, log);
+  			
 		});
-
-
-		</script>
-		
-		
-    	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABYwmRqAA9R-JBpMwWEYm7W18AbUs1LUA&callback=initMap"
-    		async defer></script>
-
-    	<script type="text/javascript">
-
-
-    	 "use strict";
-
-    	
     		
       		var map;
-      		var image =  "http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons-256/magic-marker-icons-animals/114692-magic-marker-icon-animals-animal-cat21.png";
-      		
-
-      		function initMap() {
+      		// function request for google API
+      		function initMap(lat, lng) {
         		map = new google.maps.Map(document.getElementById("maphouse"), {
-          			center: {lat: 29.417375, lng: -98.491150},
+          			center: {lat: lat, lng: lng},
           			zoom: 9
         		});
       			
+
+
       			var startingpoint = {  
-                	lat:  29.417375,
-                	lng: -98.491150
+
+                	lat:  lat,
+      	
+                	lng: lng
         		}
 
-      			var marker = new google.maps.Marker({
+        		// create a marker 
+      			 marker = new google.maps.Marker({
       				map: map,
       				title: "Drag Me",
           			position: startingpoint,
@@ -131,22 +163,54 @@
     				animation: google.maps.Animation.DROP,
     				
 
-        		})
+	        	})
+      		};
       			
+      			initMap(Latitude, Longitude); 
 
+      			// marker animations
         		function toggleBouncer() {
         			if (marker.getAnimation() !== null) {
+
     					marker.setAnimation(null);
   					} else {
+
     				marker.setAnimation(google.maps.Animation.BOUNCE);
+
   					}
+
         		}
 
+        		// event listener end of drag marker
+        		google.maps.event.addListener(marker, 'dragend', function(evt){
+    				document.getElementById('current').innerHTML = '<h3>Marker dropped: Current Lat: ' + evt.latLng.lat() + ' Current Lng: ' + evt.latLng.lng() + '</h3>';
+
+    				var Latitude = evt.latLng.lat();
+
+    				var Longitude = evt.latLng.lng();
+
+    				getWeather(Latitude, Longitude);
+
+    				map.setCenter(this.getPosition()); // Set map center to marker position
+
+   					updatePosition(this.getPosition().lat(), this.getPosition().lng());
+
+				});
+
+				// event listener for start of marker drag and drop lat/long
+
+				google.maps.event.addListener(marker, 'dragstart', function(evt){
+    				document.getElementById('current').innerHTML = '<h4>Currently dragging marker...</h4>';
+				});
+
+				
+
+				marker.setMap(map);
+
         		marker.addListener('click', toggleBouncer);
-      		};
-      		
 
-
+      			
+      	});
 
     	</script>
     	
