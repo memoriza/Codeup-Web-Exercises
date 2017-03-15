@@ -1,0 +1,16 @@
+git notes
+`git branch` shows you the branches you have locally
+`git branch my-new-branch` creates a new local branch called my-new-branch
+`git checkout my-new-branch` moves you to the my-new-branch branch
+`git push -u origin my-new-branch` to tell GitHub about your new branch
+`git push origin my-new-branch` for all future pushes to that new branch
+
+Once you've merged code from a new branch into master,
+GitHub's master branch has that code
+but your local master branch doesn't.
+
+`git checkout master`
+`git pull origin master` (to get the new content from github's master)
+@ this point, your local master will have the merged changes
+
+this is called "bringing master up to date"

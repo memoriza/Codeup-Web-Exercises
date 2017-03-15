@@ -49,7 +49,7 @@
 		var APPID = "7f8e3aa0aad113510e0c1eaafd1c17b8";
 		var url = "http://api.openweathermap.org/data/2.5/forecast/daily";
 		var marker;
-		var myLatlng;
+		
 
 		// make a function for making an Ajax request to the OpenWeatherMap API to return a weather object
 
@@ -119,7 +119,7 @@
 
 		getWeather(Latitude, Longitude);
 
-		// input and submit lat/long
+		// INPUT FORM and submit lat/long
 
 		$( "#userlatlong" ).submit(function( event ) {
 
@@ -129,16 +129,24 @@
 
 			var log = parseFloat($("#login").val());
 
+			initMap(lat, log);
+
 			getWeather(lat, log);
 			
   			console.log( "Handler for .submit() called." );
 
-  			initMap(lat, log);
+  			map.setCenter(this.getPosition()); // Set map center to marker position
+
+   			updatePosition(this.getPosition().lat(), this.getPosition().lng());
+
+  			
   			
 		});
     		
       		var map;
+
       		// function request for google API
+
       		function initMap(lat, lng) {
         		map = new google.maps.Map(document.getElementById("maphouse"), {
           			center: {lat: lat, lng: lng},
@@ -166,7 +174,7 @@
 	        	})
       		};
       			
-      			initMap(Latitude, Longitude); 
+      		initMap(Latitude, Longitude); 
 
       			// marker animations
         		function toggleBouncer() {
@@ -182,7 +190,8 @@
         		}
 
         		// event listener end of drag marker
-        		google.maps.event.addListener(marker, 'dragend', function(evt){
+        		function dragMarker () { 
+        			google.maps.event.addListener(marker, 'dragend', function(evt){
     				document.getElementById('current').innerHTML = '<h3>Marker dropped: Current Lat: ' + evt.latLng.lat() + ' Current Lng: ' + evt.latLng.lng() + '</h3>';
 
     				var Latitude = evt.latLng.lat();
@@ -195,13 +204,22 @@
 
    					updatePosition(this.getPosition().lat(), this.getPosition().lng());
 
-				});
+   						// event listener for start of marker drag and drop lat/long
 
-				// event listener for start of marker drag and drop lat/long
+					google.maps.event.addListener(marker, 'dragstart', function(evt){
+    					document.getElementById('current').innerHTML = '<h4>Currently dragging marker...</h4>';
+					});
+					
+					});
 
-				google.maps.event.addListener(marker, 'dragstart', function(evt){
-    				document.getElementById('current').innerHTML = '<h4>Currently dragging marker...</h4>';
-				});
+        		};
+
+        		dragMarker();
+
+
+
+
+			
 
 				
 

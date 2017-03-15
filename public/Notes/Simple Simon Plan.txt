@@ -1,0 +1,48 @@
+Simple Simon Plan
+
+1. Rules of Simple Simon
+
+	- click start to begin
+
+	- watch initial colored square that glows
+
+	- click on colored square that glows
+
+	- 1 round completed
+
+	- next round watch the order of the colored squares that glow
+
+	- click on colored squares in the order that they glowed
+
+	- round completed or round failed
+
+		- if completed add more colored squares to sequence for user to watch then copy
+
+		- if failed show ending sequence & and restart application 
+
+2. Pseudo-code for Simple Simon Game
+
+	- create basic HTML 5 document
+
+	- create 4 objects(divs) with ids with css styling to differentiate each one 
+
+	- assign each square to a number
+
+	- create event listeners for each of these four objects that detect when a user clicks on one of the objects and create a corresponding effect and have a reset for each object so after it has animated it goes back to it's beginning state
+
+	- now create a function with an event listener for a start button which once clicked it will randomly generate a sequence using the objects first starting with just one successful click of whichever object the button randomly picks
+
+	- the button will also invoke a function with an if / else statement that sets conditions that if the user successfully clicks on the next object in the sequence another will animate to be clicked and continue to do so unless (else) the user does not successfully click on the object then the objects will reset to there beginning state and the button will reset
+
+	- with each iteration through the loop 1 more object interaction is added until the user has either reached the 30th round or has failed which in turn will restart the loop
+
+3. Extra Features
+	
+	- each button will trigger a noise 
+	- their will be background music and imagery
+	- when the game is failed their will be a fade to black or an alert saying that they have failed
+	- when the game is successfully completed their will be a success alert/music that plays
+
+4. Theme is psyched out but not really going to add that til the end 
+
+
