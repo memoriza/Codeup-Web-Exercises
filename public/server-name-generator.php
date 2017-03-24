@@ -32,7 +32,7 @@ function generateNoun () {
 
 	<body>
 
-		<?php echo "<h1>" . "Randomly Generated New Name: " . generateAdj() . " " . generateNoun() . "</h1>"; ?>
+		<?= "<h1>" . "Randomly Generated New Name: " . generateAdj() . " " . generateNoun() . "</h1>"; ?>
 
 		<h1>test</h1>
 

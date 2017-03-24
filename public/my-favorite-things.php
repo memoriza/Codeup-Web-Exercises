@@ -8,17 +8,18 @@
 <html>
 	<head>
 		<title> My Favorite Things </title>
+		<link
 	</head>
 	<body>
 		<table>
 			<tr>
 				<th>Favorite</th>
 			</tr>
-			<?php foreach($favoriteThings as $fThing) { ?>
+			<?php foreach($favoriteThings as $fThing) : ?>
 				<tr class="rows">
-					<td><?php echo $fThing; ?></td>
+					<td><?= $fThing; ?></td>
 				</tr>
-			<?php } ?>
+			<?php endforeach ?>
 		</table>
 	</body>
 </html>
