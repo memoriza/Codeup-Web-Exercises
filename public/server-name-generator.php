@@ -24,6 +24,19 @@ function generateNoun () {
 
 }
 
+
+function pageController () {
+	
+	$array = [];
+	$array['adjective'] = generateAdj();
+	$array['noun'] = generateNoun();
+
+	return $array; 
+}
+
+
+extract(pageController());
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +45,7 @@ function generateNoun () {
 
 	<body>
 
-		<?= "<h1>" . "Randomly Generated New Name: " . generateAdj() . " " . generateNoun() . "</h1>"; ?>
+		<h1><?= "Randomly Generated New Name: " . $adjective . " " . $noun; ?></h1>
 
 		<h1>test</h1>
 
