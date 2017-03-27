@@ -1,0 +1,26 @@
+<?php
+
+
+
+function pageController () {
+	
+	$data = [];
+
+	$data['name'] = "Fernando";
+	$data['lname'] = "Mendoza";
+
+	return $data;
+
+}
+
+extract(pageController());
+
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	</body>
+</html>
