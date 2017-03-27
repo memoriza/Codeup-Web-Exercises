@@ -37,9 +37,10 @@ extract(pageController());
 	</head>
 	<body>
 
+		<h1>PING</h1>
 		<h1> Count: <?= $hit;  ?> </h1>
-		<a href="pong.php?hit=<?= $hit + 1; ?>">Hit</a>
-		<a href="ping.php?miss=<?= $hit = true; ?>">Miss</a>
+		<a href="pong.php?hit=<?=$hit + 1; ?>">Hit</a>
+		<a href="ping.php?miss=<?=$hit = true; ?>">Miss</a>
 
 	</body>
 </html>
