@@ -55,7 +55,7 @@ extract(pageController());
 
 			<input type="submit" value="submit">
 
-		<h1> User Name & Password : <?= $username . " " . $password ; ?> </h1>
+		<h1> User Name & Password : <?= htmlspecialchars(strip_tags($username)) . " " . htmlspecialchars(strip_tags($password)) ; ?> </h1>
 
 		</form>
 	</body>
