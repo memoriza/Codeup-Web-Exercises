@@ -1,24 +1,37 @@
 <?php 
 
 function pageController() {
+
 	$data = [];
 
 	if (isset($_POST["username"])){
-		$username = $_POST["username"];
+		$data["username"] = $_POST["username"];
+		
 	} else {
-		$username = "";
+
+		$data["username"] = "";
 	}
 
 	if (isset($_POST["password"])) {
-		$password = $_POST["password"];
+		$data["password"] = $_POST["password"];
+		
 	} else { 
-		$password = "";
+
+		$data["password"] = "";
+
 	}
 
-	$data["username"] = $username;
-	$data["password"] = $password;
+
+	if(!empty($_POST)) { 
+
+		if($data["username"] == "Guest" && $data["password"] == "Password") {
+			header("Location: http://codeup.dev/authorized.php");
+		}
+
+	}
 
 	return $data;
+			
 }
 
 extract(pageController());
@@ -42,7 +55,7 @@ extract(pageController());
 
 			<input type="submit" value="submit">
 
-		<h1> User Name & Password : <?= $username . " " . $password; ?> </h1>
+		<h1> User Name & Password : <?= $username . " " . $password ; ?> </h1>
 
 		</form>
 	</body>
