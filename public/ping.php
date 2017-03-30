@@ -1,31 +1,8 @@
 <?php 
 
-function pageController() {
+require_once("functions.php");
 
-	$value = [];
-
-	if (isset($_GET["hit"])) { 
-
-		$hit = $_GET["hit"];
-
-	} else {
-
-		$hit = 0;
-
-	}
-
-
-	if (isset($_GET["miss"])) {
-		echo("YOU MISSED! BITCH");
-	}
-
-	$value["hit"] = $hit; 
-
-	return $value;
-
-}
-
-extract(pageController());
+$hit = inputGet("hit");
 
 ?>
 
@@ -39,8 +16,10 @@ extract(pageController());
 
 		<h1>PING</h1>
 		<h1> Count: <?= $hit;  ?> </h1>
+
 		<a href="pong.php?hit=<?=$hit + 1; ?>">Hit</a>
-		<a href="ping.php?miss=<?=$hit = true; ?>">Miss</a>
+		
+		<a href="pong.php?hit=0">Miss</a>
 
 	</body>
 </html>
