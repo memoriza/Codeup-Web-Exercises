@@ -1,19 +1,23 @@
 <?php 
 
+require_once("../Auth.php");
+require_once("../Input.php");
+
 session_start();
 
 $sessionId = session_id();
 
-if ($_SESSION["username"] && $_SESSION["username"] == "Joshua") {
 
-	echo "you are allowed here ";
+ if (Auth::check()) {
+ 	echo "you logged in.";
 
-} else { 
+ } else {
+ 	echo "get out";
 
-	echo "you are not allowed here";
-	header("Location: http://codeup.dev/login.php");
+ 	header("Location: http://codeup.dev/login.php");
+ 	die();
 
-}
+ }
 		
 ?>
 
@@ -26,8 +30,9 @@ if ($_SESSION["username"] && $_SESSION["username"] == "Joshua") {
 		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
-		<h1> Authorized | <?= htmlspecialchars(strip_tags($_SESSION["username"]))  ; ?> </h1>
-		<a href="logout.php?reset=<?='true;' ?>">LogOut</a>
+		<h1> Authorized | <?= htmlspecialchars(strip_tags(Auth::user()))  ; ?> </h1>
+		<a href="http://codeup.dev/logout.php">LogOut</a>
+		<script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>

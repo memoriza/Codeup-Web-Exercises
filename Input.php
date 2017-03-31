@@ -26,10 +26,10 @@ class Input
     public static function get($key, $default = null)
     
     {
-        if (Input::has($key)) {
+        if (self::has($key)) {
             return $_REQUEST[$key];
         } else {
-            return null;
+            return $default;
         }
 
     }

@@ -1,30 +1,22 @@
 <?php 
 
+require_once("../Auth.php");
+require_once("../Input.php");
+
 session_start();
 
 $sessionId = session_id();
 
-function clearSession() {
-    // clear $_SESSION array
-    session_unset();
+if (!Auth::check()) {
 
-    // delete session data on the server
-    session_destroy();
+   header("Location: http://codeup.dev/login.php");
+   die();
 
-     // start a new session - session_destroy() ended our previous session so
-    // if we want to store any new data in $_SESSION we must start a new one
-    session_start();
+} else {
 
-    // ensure client is sent a new session cookie
-    session_regenerate_id();
+    Auth::logout();
 
 }
-
-if (isset($_GET['reset'])) {
-    clearsession();
-    echo "You logged out. Log back in.";
-
-} 
 
 ?>
 
@@ -36,7 +28,11 @@ if (isset($_GET['reset'])) {
         <link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
-		<a href="login.php?reset=<?=true?>">Log in</a>
+
+        <h1>Log back in!!!</h1>
+		<a href="login.php">Log in</a>
+
+        <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>
