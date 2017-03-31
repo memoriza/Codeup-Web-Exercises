@@ -1,8 +1,8 @@
 <?php 
 
-require_once("functions.php");
+require_once("../Input.php");
 
-$hit = inputGet("hit");
+$hit = Input::get("hit");
 
 ?>
 

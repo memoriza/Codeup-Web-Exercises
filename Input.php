@@ -3,12 +3,12 @@
 class Input
 
 {
-    /**
-     * Check if a given value was passed in the request
-     *
-     * @param string $key index to look for in request
-     * @return boolean whether value exists in $_POST or $_GET
-     */
+    // *
+    //  * Check if a given value was passed in the request
+    //  *
+    //  * @param string $key index to look for in request
+    //  * @return boolean whether value exists in $_POST or $_GET
+     
     public static function has($key)
 
     {
@@ -16,17 +16,17 @@ class Input
 
     }
 
-    /**
-     * Get a requested value from either $_POST or $_GET
-     *
-     * @param string $key index to look for in index
-     * @param mixed $default default value to return if key not found
-     * @return mixed value passed in request
-     */
+    // *
+    //  * Get a requested value from either $_POST or $_GET
+    //  *
+    //  * @param string $key index to look for in index
+    //  * @param mixed $default default value to return if key not found
+    //  * @return mixed value passed in request
+     
     public static function get($key, $default = null)
     
     {
-        if (inputHas($key)) {
+        if (Input::has($key)) {
             return $_REQUEST[$key];
         } else {
             return null;
