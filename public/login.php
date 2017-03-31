@@ -10,25 +10,25 @@ $sessionId = session_id();
 
 function pageController() {
 
-	$data = [];
+	if(!empty($_POST)) {
 
-	$data["username"] = Input::get("username");
+		$username = Input::get("username");
 
-	$data["password"] = Input::get("password");
-
-
-	Auth::attempt($data["username"], $data["password"]);
-
-	if (Auth::check()) {
-		header("Location: http://codeup.dev/authorized.php");
-		die();
-	}
+		$password = Input::get("password");
 		
-	return $data;
-			
+
+		if (Auth::attempt($username, $password)) {
+
+			header("Location: http://codeup.dev/authorized.php");
+			die();
+
+		}
+				
+	}
 }
 
-extract(pageController());
+pageController();
+
 
 ?>
 
@@ -41,16 +41,16 @@ extract(pageController());
 		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
-		<h1>Login</h1>
-		<form action="login.php" method="POST">
-			User Name: 
-			<input type="text" name="username">
-			Password:
-			<input type="text" name="password">
-			<input type="submit" value="submit">
-			<p> User Name entered: <?= htmlspecialchars(strip_tags($username)) . " "  ; ?> </h1>
-		</form>
-
+		<main class="container">
+			<h1>Login</h1>
+			<form action="login.php" method="POST">
+				User Name: 
+				<input type="text" name="username">
+				Password:
+				<input type="text" name="password">
+				<input type="submit" value="submit">
+			</form>
+		</main>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>

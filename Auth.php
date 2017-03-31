@@ -4,6 +4,7 @@ require_once("Log.php");
 
 class Auth {
 
+
 public static $password = '$2y$10$SLjwBwdOVvnMgWxvTI4Gb.YVcmDlPTpQystHMO2Kfyi/DS8rgA0Fm';
 
 public static function attempt ($username, $password) {
@@ -37,7 +38,12 @@ public static function check () {
 
 public static function user () {
 
-	return $_SESSION["username"];
+	if(self::check()) {
+		return ($_SESSION["username"]);
+	} else {
+		return false;
+	}
+
 
 }
 
@@ -45,11 +51,11 @@ public static function logout () {
 
     session_unset();
 
+    session_regenerate_id();
+
     session_destroy();
 
     session_start();
-
-    session_regenerate_id();
 
 }
 

@@ -5,8 +5,6 @@ require_once("../Input.php");
 
 session_start();
 
-$sessionId = session_id();
-
 if (!Auth::check()) {
 
    header("Location: http://codeup.dev/login.php");
